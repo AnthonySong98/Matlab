@@ -1,4 +1,4 @@
-# contents
+# Contents
 1. my project for the MATLAB course using GUI
 2. my codes for CUMCM(中国大学生数学建模竞赛)
 3. some useful books on MATLAB
