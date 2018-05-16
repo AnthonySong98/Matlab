@@ -1,23 +1,18 @@
-Data=xlsread('data.xlsx','Sheet1');
+Data=xlsread('night-data.xlsx',"night-local-food");
 Z=Data;
 [Zrow,Zcol]=size(Z);
 sum=0;
 
 
-    for i=1:Zrow
-    sum=sum+Data(i,1)*Data(i,1);
-    end
-    for i=1:Zrow
-    Z(i,1)=(Z(i,1)/sqrt(sum));
-    end
 
-% 
-% for i=1:Zrow
-%     sum=sum+1/(Data(i,2)*Data(i,2));
-% end
-% for i=1:Zrow
-%     Z(i,2)=((1/Z(i,2))/sqrt(sum));
-% end
+
+ 
+ for i=1:Zrow
+     sum=sum+1/(Data(i,2)*Data(i,2));
+ end
+ for i=1:Zrow
+     Z(i,2)=((1/Z(i,2))/sqrt(sum));
+ end
 
 
 for j=2:Zcol
@@ -30,7 +25,7 @@ for j=2:Zcol
     end
 end
 
-w=[0.05,0.25,0.35,0.05,0.05,0.05,0.2];
+w=[0.05,0.3,0.15,0.15,0.35];
 for i=1:Zrow
     Z(i,:)=w.*Z(i,:);
 end
